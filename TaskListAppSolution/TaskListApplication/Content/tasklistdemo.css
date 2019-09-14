@@ -1,0 +1,145 @@
+﻿#btn_next {
+    border-radius: 1vw;
+    height: calc(48px + 2vh);
+    width: calc(48px + 2vh);
+    border: 1px solid black;
+    background-color: #e9e9f9;
+    float: right;
+}
+
+    #btn_next:hover {
+        background-color: white;
+    }
+
+#btn_prev {
+    border-radius: 1vw;
+    height: calc(48px + 2vh);
+    width: calc(48px + 2vh);
+    border: 1px solid black;
+    background-color: #e9e9f9;
+    float: right;
+}
+
+    #btn_prev:hover {
+        background-color: white;
+    }
+
+
+.scroll_btn_cont {
+    display: block;
+    height: calc(48px + 2vh);
+    max-width: 400px;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+
+#add_task_cont {
+    margin: 0;
+    padding: 1vw;
+    padding-top: 0;
+    max-width: 400px;
+    border-radius: 1vw;
+    border: 1px solid black;
+    background-color: #e9e9f9;
+    display: table;
+    vertical-align: middle;
+}
+
+#add_task_form {
+    vertical-align: top;
+    line-height: calc(48px + 2vh);
+}
+
+#add_task_cont input {
+    display: table-cell;
+    font-family: 'Just Another Hand', Helvetica, sans-serif;
+    font-size: calc(24px + 2vh);
+    width: 60%;
+}
+
+#add_task_cont button {
+    display: table-cell;
+    font-size: calc(24px + 2vh);
+    vertical-align: top;
+    width: 30%;
+    margin-left: 5%;
+}
+
+#todo_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-width: 400px;
+    border-radius: 1vw;
+    font-size: calc(16px + 1vw);
+    border: 1px solid black;
+    min-height: calc((48px + 2vh) * 5);
+}
+
+    #todo_list > li {
+        height: calc(48px + 2vh);
+        padding-left: 5%;
+    }
+
+.task_list_col1 {
+    display: block;
+    float: left;
+    width: 10%;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+.task_list_col2 {
+    display: block;
+    float: left;
+    width: 69%;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+.task_list_col3 {
+    display: block;
+    float: left;
+    width: 20%;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+.task_list_col2 h3 {
+    font-family: 'Just Another Hand', Helvetica, sans-serif;
+    display: inline;
+    font-size: calc(32px + 1vh);
+    line-height: calc(48px + 2vh);
+}
+
+.task_list_col3 button {
+    font-size: calc(8px + 1vh);
+    padding: 5%;
+    margin-top: 10%;
+    height: 70%;
+    width: 100%;
+}
+
+.task_list_col1 input[type=checkbox] {
+    margin: 0px;
+    height: 100%;
+    transform: scale(1.5);
+}
+
+#todo_list > li:nth-of-type(odd) {
+    background-color: #e9e9f9;
+}
+
+#todo_list > li:last-child {
+    border-bottom: none;
+    border-bottom-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+
+#todo_list > li:first-child {
+    border-top-right-radius: 1vw;
+    border-top-left-radius: 1vw;
+}
