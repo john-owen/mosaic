@@ -13,8 +13,7 @@ namespace TaskListApplication.Models
 {
     public class TasklistCSVRemote : ITaskList
     {
-        private readonly CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-            CloudConfigurationManager.GetSetting("StorageConnectionString"));
+        private readonly CloudStorageAccount storageAccount;
         private readonly CloudFileClient fileClient; 
         private readonly CloudFileShare share;
         private readonly CloudFileDirectory root;
@@ -39,6 +38,8 @@ namespace TaskListApplication.Models
         };
 
         public TasklistCSVRemote() {
+            this.storageAccount = CloudStorageAccount.Parse(
+            CloudConfigurationManager.GetSetting("StorageConnectionString"));
             this.fileClient = storageAccount.CreateCloudFileClient();
             this.share = fileClient.GetShareReference("tasklistdatabasestore");
             this.root = this.share.GetRootDirectoryReference();
