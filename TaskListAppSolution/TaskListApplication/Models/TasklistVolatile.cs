@@ -45,7 +45,7 @@ namespace TaskListApplication.Models
             taskList.Clear();
             taskList.Add(new TaskEntry(1,"Make Coffee",false));
             taskList.Add(new TaskEntry(2,"Bake some bread",false));
-            taskList.Add(new TaskEntry(3,"Update CV,False",false));
+            taskList.Add(new TaskEntry(3,"Update CV",false));
             taskList.Add(new TaskEntry(4,"Install visual studio",false));
             taskList.Add(new TaskEntry(5,"Drink some water",false));
             taskList.Add(new TaskEntry(6,"Get Some Milk",false));
