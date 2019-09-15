@@ -1,4 +1,6 @@
-﻿
+﻿@{ 
+    ViewBag.title = "To-Do Tasks";
+}
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
@@ -14,10 +16,10 @@
             </div>
         </div>
         <div id="add_task_cont">
-            <h2>Add a 'ToDo'</h2>
-            <p>Use the form below to enter an additional 'To Do' task.<br />New entries will be added to the bottom of the list.</p>
+            <h2>Add a 'To Do'</h2>
+            <p>Use the form below to enter an additional 'To Do' task. (20 characters max + no special characters)<br />New entries will be added to the bottom of the list. Use the arrow buttons above and below the list to scroll accordingly.</p>
             <div id="add_task_form" class="d-flex justify-content-end">
-                <input id="input_new_entry" type="text" placeholder="My New Todo" maxlength="20" />
+                <input id="input_new_entry" type="text" placeholder="My New To do" maxlength="20" />
                 <button id="btn_submit" class="btn btn-default" onclick="addTask(this)">Add</button>
             </div>
         </div>
@@ -29,7 +31,7 @@
         <br />
         <br />
         <br />
-        <p>Use button below to rebuild the original CSV file or memory list(whichever list is being used).</p>
+        <p>Use button below to rebuild the original CSV file or memory list <br />(whichever list is being used).</p>
         <button id="btn_refresh" class="btn btn-default glyphicon glyphicon-refresh" onclick="rebuildList(this)"></button>     
     </div>
     <div class="col-md-3"></div>
