@@ -58,13 +58,16 @@ function getTasks(offset, count, prepend, element) {
         if (prepend) {
             for (let index = (list.length - 1); index >= 0; index--) {
                 // Remove entry from end of list
-                if (task_list_length >= MAX_LIST_SIZE) $('#todo_list>li').last().remove();
+                if (task_list_length >= MAX_LIST_SIZE) {
+                    $('#todo_list>li').last().remove();
+                    list_offset--;
+                }
 
                 // Add entry to top of list
                 var listHtml = composeListEntryHtml(list[index]);
                 $("#todo_list").prepend(listHtml);
 
-                list_offset--;
+                $("#list_offset").val(list_offset);
             }
         } else {
             for (let index = 0; index < list.length; index++) {
@@ -76,6 +79,7 @@ function getTasks(offset, count, prepend, element) {
                 $("#todo_list").append(listHtml);
 
                 list_offset++;
+                $("#list_offset").val(list_offset);
             }
         }
         if (element) element.removeAttribute("disabled");
@@ -121,7 +125,9 @@ function removeTask(id, element) {
         // Remove list element from document
         $(element).parent().parent().remove();
         list_offset--;
+        $("#list_offset").val(list_offset);
         getNext(null);
+        $("#list_offset").val(list_offset);
     };
     options.error = function () {
         alert("Error while calling the Web API!");
@@ -139,6 +145,7 @@ function addTask(element) {
     options.type = "GET";
     options.success = function () {
         if (element) element.removeAttribute("disabled");
+        $(element).parent().find("input").val('');
     };
     options.error = function () {
         alert("Error while calling the Web API!");

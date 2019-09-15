@@ -16,6 +16,8 @@ namespace TaskListApplication
             config.Formatters.JsonFormatter.SupportedMediaTypes
                 .Add(new MediaTypeHeaderValue("application/json"));
 
+            
+
             // Web API routes
             config.MapHttpAttributeRoutes();
         }

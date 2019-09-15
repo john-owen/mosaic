@@ -3,7 +3,8 @@
     <div class="col-md-3"></div>
     <div class="col-md-6">
         <div id="list_cont">
-            <h2>'ToDo' List Proof Of Concept</h2>
+            <h2>'To Do' List Proof Of Concept</h2>
+            <p><input id="list_offset" type="hidden" value="-" /></p>
             <div class="scroll_btn_cont">
                 <button id="btn_prev" class="btn btn-default glyphicon glyphicon-triangle-top" onclick="getPrev(this)"></button>
             </div>
@@ -14,9 +15,9 @@
         </div>
         <div id="add_task_cont">
             <h2>Add a 'ToDo'</h2>
-            <p>Enter below a additional 'ToDo' task. New entries will be added to the bottom of the list.</p>
+            <p>Use the form below to enter an additional 'To Do' task.<br />New entries will be added to the bottom of the list.</p>
             <div id="add_task_form" class="d-flex justify-content-end">
-                <input id="input_new_entry" type="text" placeholder="My New Todo" />
+                <input id="input_new_entry" type="text" placeholder="My New Todo" maxlength="20" />
                 <button id="btn_submit" class="btn btn-default" onclick="addTask(this)">Add</button>
             </div>
         </div>
@@ -28,9 +29,9 @@
         <br />
         <br />
         <br />
-        <p>Use button below to rebuild the original CSV file.</p>
-        <button id="btn_refresh" class="btn btn-default glyphicon glyphicon-refresh" onclick="rebuildList(this)"></button>
+        <p>Use button below to rebuild the original CSV file or memory list(whichever list is being used).</p>
+        <button id="btn_refresh" class="btn btn-default glyphicon glyphicon-refresh" onclick="rebuildList(this)"></button>     
     </div>
-        <div class="col-md-3"></div>
-    </div>
+    <div class="col-md-3"></div>
+</div>
 

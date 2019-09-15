@@ -184,9 +184,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GlobalConfig.cs" />
     <Compile Include="Models\ITaskList.cs" />
     <Compile Include="Models\TaskEntry.cs" />
     <Compile Include="Models\TasklistCSVRemote.cs" />
+    <Compile Include="Models\TasklistVolatile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

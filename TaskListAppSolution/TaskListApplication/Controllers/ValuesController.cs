@@ -11,7 +11,7 @@ namespace TaskListApplication.Controllers
 {
     public class ValuesController : ApiController
     {
-        readonly ITaskList tasklist = (ITaskList) new TasklistCSVRemote();
+        //readonly ITaskList tasklist = (ITaskList) new TasklistCSVRemote();
 
         [AcceptVerbs("GET")]
         [Route("api/values/get/{offset}/{count}")]
@@ -20,7 +20,7 @@ namespace TaskListApplication.Controllers
             // Offset cannot be negative
             if (offset < 0) offset = 0;
             
-            return Ok(tasklist.GetRange(offset, count));
+            return Ok(GlobalConfig.taskList.GetRange(offset, count));
         }
 
         [AcceptVerbs("GET")]
@@ -30,7 +30,7 @@ namespace TaskListApplication.Controllers
             if (title == null) return BadRequest();
             if (title.Length > 20) return BadRequest();
 
-            if (tasklist.Insert(title))
+            if (GlobalConfig.taskList.Insert(title))
                 return Ok();
             else
                 return BadRequest();
@@ -40,7 +40,7 @@ namespace TaskListApplication.Controllers
         [Route("api/values/remove/{id}")]
         public IHttpActionResult Remove(int id)
         {
-            if (tasklist.Remove(id))
+            if (GlobalConfig.taskList.Remove(id))
                 return Ok();
             else
                 return BadRequest();
@@ -50,7 +50,7 @@ namespace TaskListApplication.Controllers
         [Route("api/values/rebuild")]
         public IHttpActionResult Rebuild()
         {
-            if (tasklist.RebuildList())
+            if (GlobalConfig.taskList.RebuildList())
                 return Ok();
             else
                 return BadRequest();
@@ -60,7 +60,7 @@ namespace TaskListApplication.Controllers
         [Route("api/values/toggle/{id}")]
         public IHttpActionResult ToggleChecked(int id)
         {
-            if (tasklist.ToggleComplete(id))
+            if (GlobalConfig.taskList.ToggleComplete(id))
                 return Ok();
             else
                 return BadRequest();

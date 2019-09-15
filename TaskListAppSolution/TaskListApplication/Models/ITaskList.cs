@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaskListApplication.Models
 {
-    interface ITaskList
+    public interface ITaskList
     {
         Boolean ToggleComplete(int id);
         Boolean Remove(int id);
